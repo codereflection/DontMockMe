@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontMockMe.Core", "DontMock
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontMockMe.Web", "DontMockMe.Web\DontMockMe.Web.csproj", "{C1486B34-4151-4BF7-B849-C8E19B671E2E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C0105971-290B-41FE-A253-83F94455C3BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DontMockMe.Tests", "DontMockMe.Tests\DontMockMe.Tests.csproj", "{5651C973-6D1A-405A-8794-5A8DE3B61BF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,8 +51,21 @@ Global
 		{C1486B34-4151-4BF7-B849-C8E19B671E2E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C1486B34-4151-4BF7-B849-C8E19B671E2E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C1486B34-4151-4BF7-B849-C8E19B671E2E}.Release|x86.ActiveCfg = Release|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5651C973-6D1A-405A-8794-5A8DE3B61BF8} = {C0105971-290B-41FE-A253-83F94455C3BE}
 	EndGlobalSection
 EndGlobal
