@@ -1,0 +1,8 @@
+As an observer of fuzzie bunnies
+	I want to see a list of them by color
+
+As an observer of fuzzie bunnies
+	I want to pick a bunny,
+	so that I can watch
+	the fuzzy bunny hop from patch to patch
+	in the garden.
