@@ -1,37 +1,24 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using DontMockMe.Core.Models;
+﻿using System.Web.Mvc;
+using DontMockMe.Core.Repositories;
 
 namespace DontMockMe.Web.Controllers
 {
     public class FuzzieBunniesController : Controller
     {
-        //
-        // GET: /FuzzieBunnies/
-
         public ActionResult Index()
         {
-            return View(new List<FuzzieBunny>());
+            return View(new FuzzieBunnies().GetThemBunnies());
         }
-
-        //
-        // GET: /FuzzieBunnies/Details/5
 
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        //
-        // GET: /FuzzieBunnies/Create
-
         public ActionResult Create()
         {
             return View();
         } 
-
-        //
-        // POST: /FuzzieBunnies/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -48,16 +35,10 @@ namespace DontMockMe.Web.Controllers
             }
         }
         
-        //
-        // GET: /FuzzieBunnies/Edit/5
- 
         public ActionResult Edit(int id)
         {
             return View();
         }
-
-        //
-        // POST: /FuzzieBunnies/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -74,16 +55,10 @@ namespace DontMockMe.Web.Controllers
             }
         }
 
-        //
-        // GET: /FuzzieBunnies/Delete/5
- 
         public ActionResult Delete(int id)
         {
             return View();
         }
-
-        //
-        // POST: /FuzzieBunnies/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

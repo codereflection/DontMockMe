@@ -7,7 +7,13 @@ namespace DontMockMe.Core.Repositories
     {
         public IList<FuzzieBunny> GetThemBunnies()
         {
-            return new List<FuzzieBunny>();
+            return new[]
+                       {
+                           new FuzzieBunny { Name = "Fluffy", Color = "Pink" },
+                           new FuzzieBunny { Name = "Midnight", Color = "Black" },
+                           new FuzzieBunny { Name = "PunkRockBunny", Color = "Blue" },
+                           new FuzzieBunny { Name = "DrEvil", Color = "Red" },
+                       };
         }
     }
 }
