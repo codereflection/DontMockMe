@@ -1,30 +1,15 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using DontMockMe.Core.Models;
+using DontMockMe.Core.Repositories;
+using DontMockMe.Tests.TestingConstructs;
 using DontMockMe.Web.Controllers;
 using Xunit;
 
 namespace DontMockMe.Tests.Web.Controllers
 {
-    public abstract class SpecFor<T> where T : class 
-    {
-        protected T subject;
-
-        protected SpecFor()
-        {
-            Context();
-            Because();
-        }
-
-        protected ~SpecFor()
-        {
-            CleanUp();
-        }
-
-        public abstract void Context();
-        public abstract void Because();
-        public virtual void CleanUp() { }
-    }
-
     public abstract class with_a_fuzzie_bunny_controller : SpecFor<FuzzieBunniesController>
     {
         public override void Context()
@@ -35,7 +20,7 @@ namespace DontMockMe.Tests.Web.Controllers
 
     public class when_getting_a_list_of_fuzzie_bunnies : with_a_fuzzie_bunny_controller
     {
-        private ActionResult result;
+        ViewResult result;
 
         public override void Because()
         {
@@ -45,7 +30,23 @@ namespace DontMockMe.Tests.Web.Controllers
         [Fact]
         public void i_should_have_a_list_of_them_bunnies()
         {
-            Assert.NotNull(result);
+            Assert.NotEmpty(result.Model as IEnumerable<FuzzieBunny>);
+        }
+    }
+
+    public class when_ensuring_the_controller_gets_the_purple_bunny : with_a_fuzzie_bunny_controller
+    {
+        IEnumerable<FuzzieBunny> result;
+
+        public override void Because()
+        {
+            result = subject.Index().Model as IEnumerable<FuzzieBunny>;
+        }
+
+        [Fact]
+        public void the_purple_bunnie_named_Fred_I_should_see()
+        {
+            Assert.Equal(1, result.Count(x => x.Name == "Fred" && x.Color == "Purple"));
         }
     }
 }

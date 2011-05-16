@@ -41,12 +41,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestingConstructs\SpecFor.cs" />
     <Compile Include="Web\Controllers\FuzzieBunniesControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DontMockMe.Core\DontMockMe.Core.csproj">
+      <Project>{93DC92E6-02E8-459A-9801-C5888C214B0D}</Project>
+      <Name>DontMockMe.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DontMockMe.Web\DontMockMe.Web.csproj">
       <Project>{C1486B34-4151-4BF7-B849-C8E19B671E2E}</Project>
       <Name>DontMockMe.Web</Name>
