@@ -38,6 +38,13 @@ namespace DontMockMe.Tests.Web.Controllers
     {
         IEnumerable<FuzzieBunny> result;
 
+        public override void Context()
+        {
+            base.Context();
+
+            FuzzieBunnies.GetAll = () => new[] { new FuzzieBunny { Color = "Purple", Name = "Fred" } };
+        }
+        
         public override void Because()
         {
             result = subject.Index().Model as IEnumerable<FuzzieBunny>;

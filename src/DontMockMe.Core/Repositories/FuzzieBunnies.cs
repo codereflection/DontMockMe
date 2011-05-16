@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DontMockMe.Core.Models;
 
 namespace DontMockMe.Core.Repositories
@@ -15,5 +16,7 @@ namespace DontMockMe.Core.Repositories
                            new FuzzieBunny { Name = "DrEvil", Color = "Red" },
                        };
         }
+
+        public static Func<IList<FuzzieBunny>> GetAll = () => new FuzzieBunnies().GetThemBunnies();
     }
 }

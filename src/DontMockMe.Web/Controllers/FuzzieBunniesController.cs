@@ -7,7 +7,7 @@ namespace DontMockMe.Web.Controllers
     {
         public ViewResult Index()
         {
-            return View(new FuzzieBunnies().GetThemBunnies());
+            return View(FuzzieBunnies.GetAll());
         }
 
         public ActionResult Details(int id)
