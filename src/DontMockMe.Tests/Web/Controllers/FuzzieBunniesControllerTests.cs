@@ -7,24 +7,29 @@ namespace DontMockMe.Tests.Web.Controllers
 {
     public abstract class SpecFor<T> where T : class 
     {
+        protected T subject;
+
         protected SpecFor()
         {
             Context();
             Because();
         }
 
+        protected ~SpecFor()
+        {
+            CleanUp();
+        }
+
         public abstract void Context();
         public abstract void Because();
-
+        public virtual void CleanUp() { }
     }
 
     public abstract class with_a_fuzzie_bunny_controller : SpecFor<FuzzieBunniesController>
     {
-        protected FuzzieBunniesController controller;
-
         public override void Context()
         {
-            controller = new FuzzieBunniesController();
+            subject = new FuzzieBunniesController();
         }
     }
 
@@ -34,7 +39,7 @@ namespace DontMockMe.Tests.Web.Controllers
 
         public override void Because()
         {
-            result = controller.Index();
+            result = subject.Index();
         }
 
         [Fact]
